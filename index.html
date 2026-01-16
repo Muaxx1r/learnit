@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>learnit.tj — бесплатная образовательная платформа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --bg: #f4f6f8;
+      --text: #222;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* HEADER */
+    header {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    select, .btn {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(120deg, #0d47a1, #1976d2);
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    section.alt {
+      background: var(--bg);
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 800px;
+      line-height: 1.7;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0d47a1;
+      color: white;
+      padding: 60px 0;
+    }
+
+    footer a {
+      color: #bbdefb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="logo">learnit.tj</div>
+
+    <nav>
+      <a href="#home" data-i18n="nav_home">Главная</a>
+      <a href="#learning" data-i18n="nav_learning">Обучение</a>
+      <a href="#courses" data-i18n="nav_courses">Курсы</a>
+      <a href="#about" data-i18n="nav_about">О нас</a>
+    </nav>
+
+    <div class="actions">
+      <select id="langSwitcher">
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+        <option value="tj">TJ</option>
+      </select>
+      <button class="btn primary" data-i18n="login">Войти / Регистрация</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1 data-i18n="hero_title">Бесплатное образование для каждого</h1>
+    <p data-i18n="hero_text">
+      learnit.tj — образовательная платформа, где каждый может учиться бесплатно,
+      независимо от страны и финансовых возможностей.
+    </p>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section id="learning">
+  <div class="container">
+    <h2 data-i18n="learning_title">Как мы обучаем</h2>
+    <p data-i18n="learning_text">
+      Мы создаём структурированные курсы с понятными уроками, практикой и реальным
+      прогрессом. Наша цель — доступное и качественное образование.
+    </p>
+    <br>
+    <button class="btn primary" data-i18n="start_learning">Начать учиться</button>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="alt">
+  <div class="container">
+    <h2 data-i18n="courses_title">Наши курсы</h2>
+
+    <div class="cards">
+      <div class="card"><h3>Английский язык</h3></div>
+      <div class="card"><h3>Русский язык</h3></div>
+      <div class="card"><h3>Немецкий язык</h3></div>
+      <div class="card"><h3>Математика</h3></div>
+      <div class="card"><h3>Программирование</h3></div>
+      <div class="card"><h3>Веб-программирование</h3></div>
+      <div class="card"><h3>Кибербезопасность</h3></div>
+      <div class="card"><h3>Этичный хакинг</h3></div>
+      <div class="card"><h3>Веб-дизайн / Photoshop</h3></div>
+    </div>
+
+    <p style="margin-top:30px" data-i18n="courses_more">
+      И более 100 курсов в разных направлениях.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 data-i18n="about_title">О платформе learnit.tj</h2>
+    <p data-i18n="about_text">
+      learnit.tj создана для того, чтобы каждый ученик имел доступ к знаниям.
+      Платформа бесплатна, потому что образование — это право, а не привилегия.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">learnit.tj</div>
+      <p>Бесплатная образовательная платформа</p>
+    </div>
+
+    <div>
+      <div class="footer-title">Курсы</div>
+      <a>Языки</a>
+      <a>IT</a>
+      <a>Кибербезопасность</a>
+    </div>
+
+    <div>
+      <div class="footer-title">Контакты</div>
+      <a>Email: info@learnit.tj</a>
+      <a>Тел: +992 XXX XX XX</a>
+      <a>Таджикистан</a>
+    </div>
+
+    <div>
+      <div class="footer-title">Социальные сети</div>
+      <a>Telegram</a>
+      <a>YouTube</a>
+      <a>Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LANGUAGE SCRIPT -->
+<script>
+  const translations = {
+    en: {
+      hero_title: "Free education for everyone",
+      hero_text: "learnit.tj is a free educational platform for everyone.",
+      login: "Login / Register"
+    },
+    tj: {
+      hero_title: "Маорифи ройгон барои ҳама",
+      hero_text: "learnit.tj платформаи ройгони таълимӣ мебошад.",
+      login: "Воридшавӣ / Сабти ном"
+    }
+  };
+
+  document.getElementById("langSwitcher").addEventListener("change", function () {
+    const lang = this.value;
+    if (!translations[lang]) return;
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
